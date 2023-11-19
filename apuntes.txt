@@ -9,3 +9,7 @@ pip -m install -r requirements.txt
 
 4. este proyecto usa  Python 3.10.6
 
+5. super user : root || pass : root || email root@root.cl
+
+
+

@@ -1,13 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Falta1</title>
-</head>
-<body>
-    <h1>Falta 1</h1>
-    <h2>prueba de conexion con git</h2>
+{% extends './base.html' %}
+{% load static %}
+{% block titulo %}{{titulo}}{% endblock  %}
+{% block contenido %}
+    <nav class="navbar navbar-expand-lg barra">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                    <a class="navbar-brand" href="{% url "index" %}">
+                        <img    src="{% static '../static/img/logofalta1.png' %}" 
+                                alt="logo_falta_uno" 
+                                srcset=""
+                                class="logo"
+                                >
+                    </a>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                            <input  type="email" 
+                                    name="log_in_usuario" 
+                                    id="log_in_usuario" 
+                                    placeholder="Correo electronico">
+                            <input  type="password" 
+                                    name="pass_usuario" 
+                                    id="pass_usuario"
+                                    placeholder="Contraseña">
+                            <a      href="./pages/muro_comun.html" 
+                                    class="btn btn-outline-primary">Ingresar
+                            </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+
     
-</body>
-</html>
+    <div>
+
+        <h1>Falta 1</h1>
+        <h2>prueba de conexion con git</h2>    
+    </div>
