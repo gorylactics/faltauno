@@ -1,38 +1,87 @@
-*{
+/* *{
     outline: 1.7px dotted greenyellow; 
+} */
+
+body{
+    background-color: var(--azul_uno);
 }
 
+:root{
+    --azul_uno : #5086c1;
+    --azul_dos : #6a9eda;
+    --azul_tres: #84b6f4;
+    --azul_cuatro: #b2dafa;
+    --azul_cinco : #dcffff;
+}
+input{
+    margin: 7px;
+    padding: 2px;
+}
+
+h1,h2{
+    font-size: 36px;
+}
 .container{
     margin: 0;
     padding: 0;
 }
-
 .container__fluid{
     margin: 0;
     padding: 0;
 }
-
 .row{
     margin: 0;
     padding: 0;
 }
-
 .col{
     margin: 0;
     padding: 0;
 }
 
-body{
-    background-color: yellowgreen;
-}
-
 /* BARRA DE NAVEGACION INICIAL */
 .barra{
-    background-color: violet;
+    background-color: var(--azul_tres);
 }
+
 .logo{
     min-width: 5vw;
     max-width: 10vw;
+    display: inline-block;
 }
-
+.nav{
+    margin: 0;
+    padding: 0;  
+}
+.navbar .navbar-expand-lg{
+    margin: 0;
+    padding: 0;
+}
 /* /BARRA DE NAVEGACION INICIAL */
+
+/* INTRODUCCION */
+.introduccion{
+    margin: 20px auto;
+
+}
+.introduccion > .row > .col > h1 , p{
+    color: whitesmoke;
+    text-align: center;
+}
+hr{
+    color: var(--azul_cinco);
+}
+.introduccion > .row > .col > p{
+    text-align: justify;
+}
+/* /INTRODUCCION */
+
+/* REGISTRO */
+.registro{
+    margin: 20px auto;
+}
+.registro > .row > .col > h2{
+    text-align: center;
+    color: whitesmoke;
+
+}
+/* /REGISTRO */

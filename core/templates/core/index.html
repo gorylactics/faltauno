@@ -2,44 +2,142 @@
 {% load static %}
 {% block titulo %}{{titulo}}{% endblock  %}
 {% block contenido %}
-    <nav class="navbar navbar-expand-lg barra">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                    <a class="navbar-brand" href="{% url "index" %}">
-                        <img    src="{% static '../static/img/logofalta1.png' %}" 
-                                alt="logo_falta_uno" 
-                                srcset=""
-                                class="logo"
-                                >
+
+<!-- BARRA DE NAVEGACION-->
+<nav class="navbar navbar-expand-lg barra container__fluid ml-auto">
+    <div class="row w-100">
+        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 logotipo">
+            <a class="navbar-brand" href="{% url "index" %}">
+                <img    src="{% static '../static/img/logofalta1.png' %}" 
+                        alt="logo_falta_uno" 
+                        srcset=""
+                        class="logo"
+                        >
+            </a>
+        </div>
+        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-end">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                    <input  type="email" 
+                            name="log_in_usuario" 
+                            id="log_in_usuario" 
+                            placeholder="Correo electronico">
+                    <input  type="password" 
+                            name="pass_usuario" 
+                            id="pass_usuario"
+                            placeholder="Contraseña">
+                    <a  href="./pages/muro_comun.html" 
+                        class="btn btn-outline-primary">Ingresar
                     </a>
-                </div>
-                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                            <input  type="email" 
-                                    name="log_in_usuario" 
-                                    id="log_in_usuario" 
-                                    placeholder="Correo electronico">
-                            <input  type="password" 
-                                    name="pass_usuario" 
-                                    id="pass_usuario"
-                                    placeholder="Contraseña">
-                            <a      href="./pages/muro_comun.html" 
-                                    class="btn btn-outline-primary">Ingresar
-                            </a>
-                    </div>
-                </div>
             </div>
         </div>
-    </nav>
-{% endblock %}
-
-    
-    <div>
-
-        <h1>Falta 1</h1>
-        <h2>prueba de conexion con git</h2>    
     </div>
+</nav>
+<!-- /BARRA DE NAVEGACION-->
+
+<!--CONTENIDO-->
+<section class="container introduccion">
+    <div class="row">
+        <div class="col">
+            <h1>Falta 1</h1>
+            <hr>
+            <p>
+                Falta 1, tu destino deportivo definitivo, te ofrece la oportunidad de conectarte con compañeros de juego, centros deportivos y equipos en una emocionante red deportiva. Regístrate como jugador para buscar el compañero perfecto y crea equipos para competir en desafíos apasionantes. ¿Eres un centro deportivo? Únete y promociona tus canchas en diferentes deportes. La plataforma facilita la creación de equipos, invitaciones a competiciones y la ampliación de tu círculo deportivo. Explora oportunidades, construye amistades y lleva tu experiencia deportiva a nuevas alturas. Únete a Falta 1 y descubre la emoción de encontrar lo que necesitas para tu próxima aventura deportiva.
+            </p>
+        </div>
+    </div>
+</section>
+<section class="container registro">
+    <div class="row">
+        <div class="col">
+            <h2>Registrate</h2>
+        </div>
+    </div>
+</section>
+<!--/CONTENIDO-->
+
+<!--REGISTROS-->
+<section class="container">
+    <div class="row">
+        <!--REGISTRO JUGADOR-->
+        <section class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+            <h2 class="sub_titulo">Registro Jugador</h2>
+            <form action="#">
+                <input type="text" name="nombre" id="" placeholder="Nombre">
+                <input type="text" name="apellido" id="" placeholder="Apellido">
+                <input type="text" name="run" id="" placeholder="Run">
+                <input type="date" name="edad" id="" placeholder="Fecha de nacimiento" class="calendario">
+                <input type="email" name="email" id="" placeholder="Email">
+                <input type="number" name="whatsaap" id="" placeholder="Telefono">
+                <!-- <input type="text" name="region" id=""> -->
+                <input type="text" name="comuna" id="" placeholder="Comuna">
+                <div class="checkbox">
+                    <p>Que deportes practicas</p>
+                    <input type="checkbox" name="futbol" id="">
+                    <label for="futbol">Futbol</label>
+                    <input type="checkbox" name="basquetball" id="">
+                    <label for="basquetball">Basquetball</label>
+                    <input type="checkbox" name="Baseball" id="">
+                    <label for="Baseball">Baseball</label>
+                    <input type="checkbox" name="otro" id="">
+                    <label for="otro">Otro</label>
+                </div>
+                <select name="opciones" id="">
+                    <optgroup>
+                        <option value="genero" selected disabled>Selecciona tu genero</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="no_indica">Prefiero no decirlo</option>
+                    </optgroup>
+                </select>
+                <!-- <input type="submit" value="registrar" name="registrar" class="btn btn-outline-primary"> -->
+                {% comment %} <a href="./pages/perfil_usuario.html" class="btn btn-outline-primary">Registrar</a> {% endcomment %}
+                <a href="#" class="btn btn-outline-primary">Registrar</a>
+            </form>
+        </section>
+        <!--/REGISTRO JUGADOR-->
+        <!--REGISTRO CENTRO DEPORTIVO-->
+        <section class="col-md-12 col-lg-6 col-xxl-6">
+            <h2 class="sub_titulo">Registro centro deportivo</h2>
+            <!-- <form action="./pages/perfil_usuario.html" method="post"> -->
+            <!-- <form action="./pages/perfil_centro_deportivo.html" method="post"> -->
+                <form>
+                <input type="text" name="nombre" id="" placeholder="Nombre_comercial">
+                <input type="text" name="rut" id="" placeholder="Rut">
+                <input type="email" name="email" id="" placeholder="Email">
+                <input type="number" name="whatsaap" id="" placeholder="Telefono">
+                <!-- <input type="text" name="region" id=""> -->
+                <input type="text" name="comuna" id="" placeholder="Direccion">
+                <div class="checkbox">
+                    <p>Que tipo de cancha ofrece</p>
+                    <input type="checkbox" name="futbol" id="">
+                    <label for="futbol">Futbol</label>
+                    <input type="checkbox" name="basquetball" id="">
+                    <label for="basquetball">Basquetball</label>
+                    <input type="checkbox" name="Baseball" id="">
+                    <label for="Baseball">Baseball</label>
+                    <input type="checkbox" name="otro" id="">
+                    <label for="otro">Otro</label>
+                </div>
+                <div class="checkbox">
+                    <p>Que servicios ofrece</p>
+                    <input type="checkbox" name="baño" id="">
+                    <label for="baño">baño</label>
+                    <input type="checkbox" name="camarines" id="">
+                    <label for="camarines">camarines</label>
+                    <input type="checkbox" name="duchas" id="">
+                    <label for="duchas">duchas</label>
+                    <input type="checkbox" name="otro" id="">
+                    <label for="otro">Otro</label>
+                </div>
+                <!-- <input type="submit" value="registrar" name="registrar" class="btn btn-outline-primary"> -->
+                <a href="./pages/perfil_centro_deportivo.html" class="btn btn-outline-primary">Registrar</a>
+            </form>
+        </section>
+        <!--/REGISTRO CENTRO DEPORTIVO-->
+    </div>
+</section>
+<!--/REGISTROS-->
+{% endblock %}
