@@ -20,6 +20,8 @@
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
+                <form action="login/" method="POST">
+                    {% csrf_token %}
                     <input  type="email" 
                             name="log_in_usuario" 
                             id="log_in_usuario" 
@@ -28,9 +30,8 @@
                             name="pass_usuario" 
                             id="pass_usuario"
                             placeholder="Contraseña">
-                    <a  href="./pages/muro_comun.html" 
-                        class="btn btn-outline-primary">Ingresar
-                    </a>
+                    <button type="submit" class="btn btn-outline-primary">Ingresar</button>
+                </form>
             </div>
         </div>
     </div>
@@ -59,12 +60,14 @@
 <!--/CONTENIDO-->
 
 <!--REGISTROS-->
-<section class="container">
+<section class="container formularios">
     <div class="row">
         <!--REGISTRO JUGADOR-->
         <section class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
-            <h2 class="sub_titulo">Registro Jugador</h2>
-            <form action="#">
+            <form action="perfil_jugador/" method="POST" class="formularios_registro" name="jugador">
+                {% csrf_token %}
+                <h2 class="sub_titulo">Jugador</h2>
+                <hr>
                 <input type="text" name="nombre" id="" placeholder="Nombre">
                 <input type="text" name="apellido" id="" placeholder="Apellido">
                 <input type="text" name="run" id="" placeholder="Run">
@@ -92,18 +95,17 @@
                         <option value="no_indica">Prefiero no decirlo</option>
                     </optgroup>
                 </select>
-                <!-- <input type="submit" value="registrar" name="registrar" class="btn btn-outline-primary"> -->
-                {% comment %} <a href="./pages/perfil_usuario.html" class="btn btn-outline-primary">Registrar</a> {% endcomment %}
-                <a href="#" class="btn btn-outline-primary">Registrar</a>
+                <button type="submit" class="btn btn-outline-primary">Registrar</button>
+
             </form>
         </section>
         <!--/REGISTRO JUGADOR-->
         <!--REGISTRO CENTRO DEPORTIVO-->
         <section class="col-md-12 col-lg-6 col-xxl-6">
-            <h2 class="sub_titulo">Registro centro deportivo</h2>
-            <!-- <form action="./pages/perfil_usuario.html" method="post"> -->
-            <!-- <form action="./pages/perfil_centro_deportivo.html" method="post"> -->
-                <form>
+            <form action="perfil_centro/" method="POST" class="formularios_registro" name="centro_deportivo">
+                {% csrf_token %}
+                <h2 class="sub_titulo">Centro deportivo</h2>
+                <hr>
                 <input type="text" name="nombre" id="" placeholder="Nombre_comercial">
                 <input type="text" name="rut" id="" placeholder="Rut">
                 <input type="email" name="email" id="" placeholder="Email">
@@ -132,12 +134,16 @@
                     <input type="checkbox" name="otro" id="">
                     <label for="otro">Otro</label>
                 </div>
-                <!-- <input type="submit" value="registrar" name="registrar" class="btn btn-outline-primary"> -->
-                <a href="./pages/perfil_centro_deportivo.html" class="btn btn-outline-primary">Registrar</a>
+                <button type="submit" class="btn btn-outline-primary">Registrar</button>
             </form>
         </section>
         <!--/REGISTRO CENTRO DEPORTIVO-->
     </div>
 </section>
 <!--/REGISTROS-->
+<!--FOOTER-->
+{% include "./footer.html" %}
+<!--/FOOTER-->
+
+
 {% endblock %}

@@ -1,0 +1,39 @@
+{% extends './base.html' %}
+{% load static %}
+{% block titulo %}{{titulo}}{% endblock  %}
+{% block contenido %}
+{% include "./menu.html" %}
+
+
+<h1>MURO PRINCIPAL</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-xxl-12 col-sd 12 contenedor_comentarios  comentarios_muro_principal">
+            <ul>
+                <li>
+                    <div class="plantilla_comentario">
+                      <div class="hearder_comentario">
+                        <img src="{% static '../static/img/centro_deportivo.jpg' %}" alt="" class="avatar_chico">
+                        <p class="nombre_usuario">Nombre Usuario</p>
+                      </div>
+                        <h3>Titulo</h3>
+                        <hr>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis sequi, ipsa voluptas porro a eveniet. Enim nostrum molestiae dolorem? Perferendis itaque odio aliquid, adipisci consectetur in alias. Itaque, odit qui!</p>
+                      </div>
+                  </li>
+                  <li>
+                    <div class="plantilla_comentario">
+                      <div class="hearder_comentario">
+                        <img src="{% static '../static/img/avatar_usuario.jpeg' %}" alt="" class="avatar_chico">
+                        <p class="nombre_usuario">Nombre Usuario</p>
+                      </div>
+                        <h3>Titulo</h3>
+                        <hr>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis sequi, ipsa voluptas porro a eveniet. Enim nostrum molestiae dolorem? Perferendis itaque odio aliquid, adipisci consectetur in alias. Itaque, odit qui!</p>
+                      </div>
+                  </li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
