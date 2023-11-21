@@ -217,3 +217,32 @@ li{
     margin: 0 auto;
 }
 /* MURO /PRINCIPAL */
+
+.posteo{
+    background-color: var(--azul_dos);
+    margin: 30px auto 30px auto;
+
+}
+
+.contenedor_comentario{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	align-items: center;
+	align-content: flex-end;
+    border-radius: 20px;
+
+}
+textarea{
+    border-radius: 20px;
+}
+textarea , button{
+    margin: 10px auto;
+}
+
+.comentarios_muro_general{
+    margin: 0 auto;
+    /* width: 50vw; */
+}
+

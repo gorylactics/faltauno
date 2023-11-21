@@ -18,8 +18,8 @@ def login(request):
         return redirect('/success/')
 
 def success(request):
-    valor = request.POST['jugador']
-    print(valor)
+    # valor = request.POST['jugador']
+    # print(valor)
     return redirect('/perfil_jugador/')
 
 
